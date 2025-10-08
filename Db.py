@@ -1,4 +1,4 @@
-import Game
+import pygame
 import sqlite3
 
 class Database:

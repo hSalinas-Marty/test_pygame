@@ -4,12 +4,13 @@ from pygame.locals import *
 import Db
 
 class Game:
-    def __init__(self, pseudo) :
+    def __init__(self, pseudo, test, score = 0, niveau = 1) :
         self.pseudo = pseudo
-        self.score = 0
-        self.niveau = 1
-        self.data = Db.Database()                                                            # Creation Database
-        self.data.sauvegarder_partie(self.pseudo, self.score, self.niveau)
+        self.score = score
+        self.niveau = niveau
+        if test:
+            self.data = Db.Database()                                                            # Creation Database
+            self.data.sauvegarder_partie(self.pseudo, self.score, self.niveau)
     
     def run(self, fenetre):
         fenetre.fill("yellow")
